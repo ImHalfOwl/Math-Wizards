@@ -6,6 +6,8 @@
 
 body {
     display: flex;
+    flex-direction: column; /* Vertically aligns items */
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -37,13 +39,68 @@ body {
     background-size: cover;
 }
 
-.logo {
+/* Navigation bar */
+.navbar {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px; /* Sets logo position above the canvas */
+    align-items: center;
+    width: 100%;
+    height: 110px; /*The logo's 130px but there's some blank space*/
+    padding: 10px 0;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the navbar */
 }
 
-.logo img {
-    max-width: 200px; /* Logo size */
+/* Centering for the logo */
+.navbar .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Logo */
+.navbar .logo img {
+    max-width: 130px;
     height: auto;
+}
+
+.navbar .logo img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Left and right navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links.left {
+    margin-right: 100px; /* Pulls "About" closer to the center */
+}
+
+.nav-links.right {
+    margin-left: 100px; /* Pulls "Credits" closer to the center */
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Chewy', sans-serif;
 }
