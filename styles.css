@@ -30,9 +30,20 @@ body {
 
 .wizard {
     position: absolute;
-    bottom: 50px; /* Stays on top of the grass */
+    bottom: 50px; /* Sets wizards position above the grass */
     width: 100px;
     height: 100px;
     background-image: url('wizard1.png');
     background-size: cover;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Sets logo position above the canvas */
+}
+
+.logo img {
+    max-width: 200px; /* Logo size */
+    height: auto;
 }
