@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0e0e0;
+}
+
+.gameplay-area {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background-color: lightblue;
+    border: 2px solid #000;
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: green;
+}
+
+.wizard {
+    position: absolute;
+    bottom: 50px; /* Stays on top of the grass */
+    width: 100px;
+    height: 100px;
+    background-image: url('wizard1.png');
+    background-size: cover;
+}
