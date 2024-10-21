@@ -23,10 +23,22 @@
         </ul>
     </nav>
 
-    <div class="gameplay-area">
+    <!-- Topic Selection Section -->
+    <div id="topicSelection">
+        <h2>Select a Topic</h2>
+        <button onclick="selectTopic('math')">Math</button>
+        <button onclick="selectTopic('physics')">Physics</button>
+        <button onclick="selectTopic('chemistry')">Chemistry</button>
+        <button onclick="selectTopic('english')">English</button>
+    </div>
+
+    <!-- Gameplay area, initially hidden until a topic is selected -->
+    <div class="gameplay-area" id="gameArea" style="display: none;">
+        <p id="question"></p>
         <div class="wizard" id="wizard"></div>
         <div class="grass"></div>
     </div>
+
     <script src="gameplay.js"></script>
 </body>
 </html>
