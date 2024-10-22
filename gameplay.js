@@ -21,10 +21,8 @@ const topics = {
         { question: 'Fill in the blank: "The cat ___ the hat."', answer: 'in' }
     ]
 };
-
 let selectedTopic = null;
 let currentQuestion = null;
-
 // Topic selection function
 function selectTopic(topic) {
     selectedTopic = topic; // Set the selected topic globally
@@ -32,15 +30,48 @@ function selectTopic(topic) {
     document.getElementById('gameArea').style.display = 'block'; // Show the game area
     generateQuestion(); // Generate the first question
 }
-
 // Function to generate a new question
 function generateQuestion() {
     const questions = topics[selectedTopic];
     const randomIndex = Math.floor(Math.random() * questions.length);
     currentQuestion = questions[randomIndex];
+    // Display the question
     document.getElementById('question').innerText = currentQuestion.question;
+    // Randomly assign correct answer to one of the three bubbles
+    const correctBubble = Math.floor(Math.random() * 3) + 1;
+    document.getElementById(answerBubble${correctBubble}).innerText = currentQuestion.answer;
+    // Generate two wrong answers (simple for now, can be more sophisticated)
+    const wrongAnswers = generateWrongAnswers(currentQuestion.answer);
+    // Assign wrong answers to the remaining bubbles
+    let wrongAnswerIndex = 0;
+    for (let i = 1; i <= 3; i++) {
+        if (i !== correctBubble) {
+            document.getElementById(answerBubble${i}).innerText = wrongAnswers[wrongAnswerIndex];
+            wrongAnswerIndex++;
+        }
+    }
 }
-
+// Function to generate wrong answers (can be customized for each topic)
+function generateWrongAnswers(correctAnswer) {
+    let wrongAnswers = [];
+    while (wrongAnswers.length < 2) {
+        let randomAnswer = Math.floor(Math.random() * 20) + 1; // Example for numbers
+        if (randomAnswer !== correctAnswer && !wrongAnswers.includes(randomAnswer)) {
+            wrongAnswers.push(randomAnswer);
+        }
+    }
+    return wrongAnswers;
+}
+// Function to check if the clicked bubble has the correct answer
+function checkAnswer(bubbleIndex) {
+    const selectedAnswer = document.getElementById(answerBubble${bubbleIndex}).innerText;
+    if (selectedAnswer == currentQuestion.answer) {
+        alert('Correct!');
+        generateQuestion(); // Load a new question if the answer is correct
+    } else {
+        alert('Wrong! Try again.');
+    }
+}
 // Wizard movement logic
 const wizard = document.getElementById("wizard");
 let wizardPosition = 0;
@@ -49,7 +80,6 @@ const gameAreaWidth = 800;
 const wizardWidth = 100; // Match the CSS
 const moveSpeed = 5;
 let moveInterval;
-
 // Keys for movement
 document.addEventListener('keydown', (event) => {
     switch (event.key) {
@@ -67,12 +97,10 @@ document.addEventListener('keydown', (event) => {
             break;
     }
 });
-
 // Stops movement when key is not being pressed
 document.addEventListener('keyup', (event) => {
     stopMoving();
 });
-
 // Moving in a direction
 function startMoving(direction) {
     stopMoving(); // Stop any previous movement
@@ -96,28 +124,30 @@ function startMoving(direction) {
         }, 20);
     }
 }
-
 // Stops the movement
 function stopMoving() {
     clearInterval(moveInterval);
 }
-
 // When w or up arrow is pressed, use magic wizard staff
 function performAction() {
-    if (wizardState === 1) {
-        wizard.style.backgroundImage = "url('wizard2.png')";
-    } else if (wizardState === 3) {
-        wizard.style.backgroundImage = "url('wizard4.png')";
+    let playerAnswer = prompt("Enter your answer:");
+    if (playerAnswer == currentQuestion.answer) {
+        alert("Correct!");
+        generateQuestion();  // Generate a new question if correct
+    } else {
+        alert("Wrong! Try again.");
     }
-    
-    setTimeout(() => {
-        // Stops using magic wizard staff
-
     if (wizardState === 1) {
         wizard.style.backgroundImage = "url('wizard1.png')";
     } else if (wizardState === 3) {
         wizard.style.backgroundImage = "url('wizard3.png')";
     }
-    isTransforming = false; 
-}, 2000); // 1000 is 1 second
 }
+
+
+
+
+
+
+
+

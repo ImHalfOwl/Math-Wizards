@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     display: flex;
     flex-direction: column; /* Vertically aligns items */
@@ -11,9 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e0e0e0;
+    background-color: #E0E0E0;
 }
-
 .gameplay-area {
     position: relative;
     width: 800px;
@@ -21,7 +19,6 @@ body {
     background-color: lightblue;
     border: 2px solid #000;
 }
-
 .grass {
     position: absolute;
     bottom: 0;
@@ -29,7 +26,6 @@ body {
     height: 70px;
     background-color: green;
 }
-
 .wizard {
     position: absolute;
     bottom: 50px; /* Sets wizards position above the grass */
@@ -38,7 +34,6 @@ body {
     background-image: url('wizard1.png');
     background-size: cover;
 }
-
 /* Navigation bar */
 .navbar {
     display: flex;
@@ -47,31 +42,27 @@ body {
     width: 100%;
     height: 110px; /*The logo's 130px but there's some blank space*/
     padding: 10px 0;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%); /* Centers the navbar */
 }
-
-/* Centering for the logo */
+/* Logo */
 .navbar .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-
 /* Logo */
 .navbar .logo img {
     max-width: 130px;
     height: auto;
 }
-
 .navbar .logo img:hover {
     animation: shake 0.5s;
     animation-iteration-count: 1;
 }
-
 @keyframes shake {
     0% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
@@ -79,30 +70,43 @@ body {
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
 }
-
 /* Left and right navigation links */
 .nav-links {
     list-style: none;
     display: flex;
 }
-
 .nav-links.left {
     margin-right: 100px; /* Pulls "About" closer to the center */
 }
-
 .nav-links.right {
     margin-left: 100px; /* Pulls "Credits" closer to the center */
 }
-
 .nav-links li {
     margin: 0 10px;
 }
-
 .nav-links a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-size: 20px;
     font-family: 'Chewy', sans-serif;
+}
+.answer-bubbles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.bubble {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Chewy', sans-serif;
+    cursor: pointer;
+    font-size: 18px;
 }
 /* Container for buttons */
 .subject-buttons {
@@ -111,8 +115,6 @@ body {
     gap: 20px; /* Space between buttons */
     margin: 20px 0; /* Add some space around the buttons */
 }
-
-/* Button Styles */
 .subject-btn {
     font-family: 'Chewy', sans-serif; /* Fun font */
     font-size: 20px;
@@ -125,17 +127,13 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     transition: all 0.3s ease; /* Smooth transition effect */
 }
-
-/* Hover Effect */
 .subject-btn:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
+    background-color: #45A049; /* Slightly darker green on hover */
     transform: translateY(-2px); /* Slight upward movement on hover */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
-
-/* Active button effect */
 .subject-btn:active {
-    background-color: #397d3b; /* Even darker green when clicked */
+    background-color: #397D3B; /* Even darker green when clicked */
     transform: translateY(1px); /* Button depresses slightly when clicked */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
 }

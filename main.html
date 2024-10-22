@@ -8,37 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation bar with logo -->
+    <!-- Navigation -->
     <nav class="navbar">
         <ul class="nav-links left">
             <li><a href="about.html">About</a></li>
         </ul>
-
         <div class="logo">
             <img src="quizwizardslogo.png" alt="Math Wizards Logo">
         </div>
-
         <ul class="nav-links right">
             <li><a href="credits.html">Credits</a></li>
         </ul>
     </nav>
-
-    <!-- Topic Selection Section -->
-    <div class="subject-buttons">
-        <button class="subject-btn" onclick="selectTopic('Math')">Math</button>
-        <button class="subject-btn" onclick="selectTopic('English')">English</button>
-        <button class="subject-btn" onclick="selectTopic('Physics')">Physics</button>
-        <button class="subject-btn" onclick="selectTopic('Chemistry')">Chemistry</button>
+    <!-- Topics -->
+    <div id="topicSelection">
+        <h2>Select a Topic</h2>
+        <button class="subject-btn" onclick="selectTopic('math')">Math</button>
+        <button class="subject-btn" onclick="selectTopic('physics')">Physics</button>
+        <button class="subject-btn" onclick="selectTopic('chemistry')">Chemistry</button>
+        <button class="subject-btn" onclick="selectTopic('english')">English</button>
     </div>
-    
-
-    <!-- Gameplay area, initially hidden until a topic is selected -->
-    <div class="gameplay-area" id="gameArea" style="display: none;">
-        <p id="question"></p>
-        <div class="wizard" id="wizard"></div>
-        <div class="grass"></div>
+<!-- Gameplay area -->
+<div class="gameplay-area" id="gameArea" style="display: none;">
+    <p id="question"></p>
+    <div class="answer-bubbles">
+        <div class="bubble" id="answerBubble1" onclick="checkAnswer(1)"></div>
+        <div class="bubble" id="answerBubble2" onclick="checkAnswer(2)"></div>
+        <div class="bubble" id="answerBubble3" onclick="checkAnswer(3)"></div>
     </div>
-
+    <div class="wizard" id="wizard"></div>
+    <div class="grass"></div>
+</div>
     <script src="gameplay.js"></script>
 </body>
 </html>
