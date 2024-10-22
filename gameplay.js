@@ -104,18 +104,20 @@ function stopMoving() {
 
 // When w or up arrow is pressed, use magic wizard staff
 function performAction() {
-    let playerAnswer = prompt("Enter your answer:");
-
-    if (playerAnswer == currentQuestion.answer) {
-        alert("Correct!");
-        generateQuestion();  // Generate a new question if correct
-    } else {
-        alert("Wrong! Try again.");
+    if (wizardState === 1) {
+        wizard.style.backgroundImage = "url('wizard2.png')";
+    } else if (wizardState === 3) {
+        wizard.style.backgroundImage = "url('wizard4.png')";
     }
+    
+    setTimeout(() => {
+        // Stops using magic wizard staff
 
     if (wizardState === 1) {
         wizard.style.backgroundImage = "url('wizard1.png')";
     } else if (wizardState === 3) {
         wizard.style.backgroundImage = "url('wizard3.png')";
     }
+    isTransforming = false; 
+}, 2000); // 1000 is 1 second
 }
