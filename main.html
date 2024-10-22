@@ -13,13 +13,18 @@
         <ul class="nav-links left">
             <li><a href="about.html">About</a></li>
         </ul>
+
         <div class="logo">
-            <img src="quizwizardslogo.png" alt="Math Wizards Logo">
+            <a href="main.html">
+                <img src="quizwizardslogo.png" alt="Math Wizards Logo">
+            </a>
         </div>
+
         <ul class="nav-links right">
             <li><a href="credits.html">Credits</a></li>
         </ul>
     </nav>
+
     <!-- Topics -->
     <div id="topicSelection">
         <h2>Select a Topic</h2>
@@ -28,6 +33,7 @@
         <button class="subject-btn" onclick="selectTopic('chemistry')">Chemistry</button>
         <button class="subject-btn" onclick="selectTopic('english')">English</button>
     </div>
+
 <!-- Gameplay area -->
 <div class="gameplay-area" id="gameArea" style="display: none;">
     <p id="question"></p>
@@ -39,6 +45,8 @@
     <div class="wizard" id="wizard"></div>
     <div class="grass"></div>
 </div>
+
     <script src="gameplay.js"></script>
+
 </body>
 </html>

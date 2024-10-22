@@ -1,0 +1,107 @@
+body {
+    font-family: 'Chewy', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color for contrast */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text alignment */
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 110px; /*The logo's 130px but there's some blank space*/
+    padding: 10px 0;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the navbar */
+}
+
+/* Logo */
+.navbar .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Logo */
+.navbar .logo img {
+    max-width: 130px;
+    height: auto;
+}
+
+.navbar .logo img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Left and right navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links.left {
+    margin-right: 100px; /* Pulls "About" closer to the center */
+}
+
+.nav-links.right {
+    margin-left: 100px; /* Pulls "Credits" closer to the center */
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Chewy', sans-serif;
+}
+
+.content {
+    max-width: 800px; /* Maximum width for content */
+    margin: 0; /* Remove margin */
+    padding: 20px;
+    background-color: white; /* White background for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.content h1 {
+    font-size: 2.5em; /* Larger font for the main heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.content h3 {
+    font-size: 1.5em; /* Slightly smaller font for the subheading */
+    margin-bottom: 20px; /* Space below the subheading */
+}
+
+.content ul {
+    list-style-type: disc; /* Default bullet points */
+    padding-left: 20px; /* Space before the list */
+}
+
+.content ul li {
+    margin: 10px 0; /* Space between list items */
+    line-height: 1.5; /* Line height for readability */
+}
