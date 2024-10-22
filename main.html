@@ -24,13 +24,13 @@
     </nav>
 
     <!-- Topic Selection Section -->
-    <div id="topicSelection">
-        <h2>Select a Topic</h2>
-        <button onclick="selectTopic('math')">Math</button>
-        <button onclick="selectTopic('physics')">Physics</button>
-        <button onclick="selectTopic('chemistry')">Chemistry</button>
-        <button onclick="selectTopic('english')">English</button>
+    <div class="subject-buttons">
+        <button class="subject-btn" onclick="selectTopic('Math')">Math</button>
+        <button class="subject-btn" onclick="selectTopic('English')">English</button>
+        <button class="subject-btn" onclick="selectTopic('Physics')">Physics</button>
+        <button class="subject-btn" onclick="selectTopic('Chemistry')">Chemistry</button>
     </div>
+    
 
     <!-- Gameplay area, initially hidden until a topic is selected -->
     <div class="gameplay-area" id="gameArea" style="display: none;">

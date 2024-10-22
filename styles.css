@@ -104,3 +104,38 @@ body {
     font-size: 20px;
     font-family: 'Chewy', sans-serif;
 }
+/* Container for buttons */
+.subject-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin: 20px 0; /* Add some space around the buttons */
+}
+
+/* Button Styles */
+.subject-btn {
+    font-family: 'Chewy', sans-serif; /* Fun font */
+    font-size: 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* Text color */
+    border: none; /* Remove default borders */
+    border-radius: 12px; /* Rounded corners */
+    padding: 15px 30px; /* Padding for size */
+    cursor: pointer; /* Pointer cursor for hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover Effect */
+.subject-btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Active button effect */
+.subject-btn:active {
+    background-color: #397d3b; /* Even darker green when clicked */
+    transform: translateY(1px); /* Button depresses slightly when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}
